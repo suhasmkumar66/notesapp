@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ username }}! <a href="{{ url_for('logout') }}" class="btn btn-sm btn-danger float-end">Logout</a></h2>
+
+<form method="POST" action="/add" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="content" class="form-control" placeholder="Add a note..." required>
+        <button class="btn btn-primary">Add</button>
+    </div>
+</form>
+
+<ul class="list-group">
+    {% for note in notes %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ note[1] }}
+            <div>
+                <a href="{{ url_for('edit_note', note_id=note[0]) }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ url_for('delete_note', note_id=note[0]) }}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+        </li>
+    {% else %}
+        <li class="list-group-item text-muted">No notes yet. Add one!</li>
+    {% endfor %}
+</ul>
+{% endblock %}

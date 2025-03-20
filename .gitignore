@@ -1,0 +1,46 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+
+# Environment variables
+.env
+.env.*
+
+# SQLite databases & instance files
+*.sqlite3
+*.db
+*.db-journal
+instance/
+
+# Logs
+*.log
+
+# Test results & coverage reports
+htmlcov/
+.coverage
+coverage.xml
+.pytest_cache/
+test-results/
+
+# Docker ignore artifacts
+.dockerignore
+
+# Build / distribution artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+
+# OS junk
+.DS_Store
+Thumbs.db
